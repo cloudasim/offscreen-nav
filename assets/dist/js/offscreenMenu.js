@@ -1,11 +1,10 @@
-// Create an immediately invoked functional expression to wrap our code
-(function() {
+(function($) {
 
-    var offscreenselector = document.getElementByClass('offscreen-master');
-    // Define our constructor 
-    this.offscreenMenu = function() {
+	'use strict';
 
+    $.fn.offscreenMenu = function( options ) {
+        
 
     }
 
-}());
+}(jQuery));

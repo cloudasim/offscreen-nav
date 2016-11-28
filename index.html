@@ -75,4 +75,10 @@
     </body>
     <script src="assets/dist/js/jquery.js" type="text/javascript"></script>
     <script src="assets/dist/js/offscreenMenu.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.offscreen-master').addClass('initial');
+            $('.offscreen-master').after("<div class='hamburger'><span class='line'></span><span class='line'></span><span class='line'></span></div>");
+        });
+    </script>
 </html>

@@ -9,6 +9,12 @@ nav.offscreen-master {
   min-width: 180px;
   max-width: 420px;
 }
+nav.offscreen-master.initial {
+  left: -420px;
+}
+nav.offscreen-master.open {
+  left: 0;
+}
 nav.offscreen-master ul {
   margin: 0;
   padding: 0;
@@ -34,6 +40,25 @@ nav.offscreen-master ul li a:active, nav.offscreen-master ul li a:visited {
 }
 nav.offscreen-master ul li > ul li {
   padding-left: 10px;
+}
+
+/* Hamburger Menu Styling*/
+.hamburger {
+  position: relative;
+  width: 22px;
+  height: 42px;
+  cursor: pointer;
+  margin: 20px;
+}
+.hamburger span.line {
+  width: 22px;
+  height: 2px;
+  background: #212121;
+  display: block;
+  margin-bottom: 5px;
+}
+.hamburger:hover span.line, .hamburger:focus span.line {
+  background: #0071bc;
 }
 
 /*# sourceMappingURL=offscreenMenu.css.map */

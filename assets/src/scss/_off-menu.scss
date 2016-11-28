@@ -5,6 +5,14 @@ nav.offscreen-master{
     min-width: 180px;
     max-width: 420px;
 
+    &.initial{
+        left: -420px;
+    }
+
+    &.open{
+        left: 0;
+    }
+
     ul{
         margin: 0;
         padding: 0;
@@ -38,6 +46,37 @@ nav.offscreen-master{
                 padding-left: 10px;
             }
 
+        }
+
+    }
+
+}
+
+/* Hamburger Menu Styling*/
+.hamburger{
+    position: relative;
+    width: 22px;
+    height: 42px;
+    cursor: pointer;
+    margin: 20px;
+
+    span{
+        &.line{
+            width: 22px;
+            height: 2px;
+            background: $base;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+    }
+
+    &:hover,
+    &:focus{
+        span{
+            &.line{
+                background: $primary;
+            }
         }
 
     }
