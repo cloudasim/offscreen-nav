@@ -1,0 +1,45 @@
+nav.offscreen-master{
+    @include position(fixed, 0, 0, 0, 0);
+    background: $white;
+    width: 100%;
+    min-width: 180px;
+    max-width: 420px;
+
+    ul{
+        margin: 0;
+        padding: 0;
+
+        li{
+            list-style: none;
+            display: block;
+
+            a{
+                color: $base;
+                text-decoration: none;
+                display: block;
+                padding: 5px 10px;
+
+                &:hover,
+                &:focus{
+                    color: $primary;
+                    outline: none;
+                }
+
+                &:active,
+                &:visited{
+                    color: $primary-dark;
+                    text-decoration: none;
+                    outline: none;
+                }
+
+            }
+
+            > ul li{
+                padding-left: 10px;
+            }
+
+        }
+
+    }
+
+}

@@ -1,0 +1,39 @@
+nav.offscreen-master {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  width: 100%;
+  min-width: 180px;
+  max-width: 420px;
+}
+nav.offscreen-master ul {
+  margin: 0;
+  padding: 0;
+}
+nav.offscreen-master ul li {
+  list-style: none;
+  display: block;
+}
+nav.offscreen-master ul li a {
+  color: #212121;
+  text-decoration: none;
+  display: block;
+  padding: 5px 10px;
+}
+nav.offscreen-master ul li a:hover, nav.offscreen-master ul li a:focus {
+  color: #0071bc;
+  outline: none;
+}
+nav.offscreen-master ul li a:active, nav.offscreen-master ul li a:visited {
+  color: #0062a3;
+  text-decoration: none;
+  outline: none;
+}
+nav.offscreen-master ul li > ul li {
+  padding-left: 10px;
+}
+
+/*# sourceMappingURL=offscreenMenu.css.map */
