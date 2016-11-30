@@ -1,12 +1,18 @@
+.show{
+    display: none;
+}
 nav.offscreen-master{
-    @include position(fixed, 0, 0, 0, 0);
+    @include position(fixed, 0, 0, 0, -420px);
+    @include transition(all linear 0.35s );
+    z-index: 44;
     background: $white;
     width: 100%;
     min-width: 180px;
     max-width: 420px;
+    overflow-y: auto;
 
-    &.initial{
-        left: -420px;
+    &.openmaster{
+        left: 0;
     }
 
     &.open{
@@ -20,12 +26,17 @@ nav.offscreen-master{
         li{
             list-style: none;
             display: block;
+            position: relative;
 
             a{
                 color: $base;
+                position: relative;
                 text-decoration: none;
                 display: block;
-                padding: 5px 10px;
+                font-size: 14px;
+                padding: 15px;
+                border-bottom: 1px solid darken( $white, 2%);
+
 
                 &:hover,
                 &:focus{
@@ -34,7 +45,7 @@ nav.offscreen-master{
                 }
 
                 &:active,
-                &:visited{
+                &.active{
                     color: $primary-dark;
                     text-decoration: none;
                     outline: none;
@@ -42,7 +53,35 @@ nav.offscreen-master{
 
             }
 
+            .hasSub{
+                @include position(absolute, 15px, 7px, 0, auto);
+                @include border-radius(50%);
+                color: lighten($base, 5%);
+                cursor: pointer;
+                width: 20px;
+                text-align: center;
+                height: 20px;
+                line-height: 20px;
+                display: inline-block;
+                background: darken($white, 2%);
+                z-index: 55;
+
+                &.close{
+                    &:after{
+                        content: '+';
+                    }
+                }
+
+                &.open{
+                    &:after{
+                        content: "-";
+                    }
+                }
+
+            }
+
             > ul li{
+                // display: none;
                 padding-left: 10px;
             }
 
@@ -52,11 +91,53 @@ nav.offscreen-master{
 
 }
 
+@if $appear-from == 'right'{
+    nav.offscreen-master{
+        left: auto;
+        text-align: right;
+
+        &.openmaster{
+            right: 0;
+        }
+
+        &:open{
+            left: auto;
+            right: 0;
+        }
+
+        ul{
+            li{
+                .hasSub{
+                    left: 7px;
+                }
+
+                > ul li{
+                    padding-left: 0;
+                    padding-right: 10px;
+                }
+            }
+        }
+
+    }
+
+}
+
+.close-master{
+    background: $primary;
+    color: white;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-align: center;
+}
+
 /* Hamburger Menu Styling*/
 .hamburger{
     position: relative;
     width: 22px;
     height: 42px;
+    z-index: 33;
     cursor: pointer;
     margin: 20px;
 

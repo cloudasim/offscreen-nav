@@ -1,16 +1,26 @@
+.show {
+  display: none;
+}
+
 nav.offscreen-master {
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
-  left: 0;
+  left: -420px;
+  -webkit-transition: all linear 0.35s;
+  -moz-transition: all linear 0.35s;
+  -o-transition: all linear 0.35s;
+  transition: all linear 0.35s;
+  z-index: 44;
   background: #fff;
   width: 100%;
   min-width: 180px;
   max-width: 420px;
+  overflow-y: auto;
 }
-nav.offscreen-master.initial {
-  left: -420px;
+nav.offscreen-master.openmaster {
+  left: 0;
 }
 nav.offscreen-master.open {
   left: 0;
@@ -22,24 +32,64 @@ nav.offscreen-master ul {
 nav.offscreen-master ul li {
   list-style: none;
   display: block;
+  position: relative;
 }
 nav.offscreen-master ul li a {
   color: #212121;
+  position: relative;
   text-decoration: none;
   display: block;
-  padding: 5px 10px;
+  font-size: 14px;
+  padding: 15px;
+  border-bottom: 1px solid #fafafa;
 }
 nav.offscreen-master ul li a:hover, nav.offscreen-master ul li a:focus {
   color: #0071bc;
   outline: none;
 }
-nav.offscreen-master ul li a:active, nav.offscreen-master ul li a:visited {
+nav.offscreen-master ul li a:active, nav.offscreen-master ul li a.active {
   color: #0062a3;
   text-decoration: none;
   outline: none;
 }
+nav.offscreen-master ul li .hasSub {
+  position: absolute;
+  top: 15px;
+  right: 7px;
+  bottom: 0;
+  left: auto;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  color: #2e2e2e;
+  cursor: pointer;
+  width: 20px;
+  text-align: center;
+  height: 20px;
+  line-height: 20px;
+  display: inline-block;
+  background: #fafafa;
+  z-index: 55;
+}
+nav.offscreen-master ul li .hasSub.close:after {
+  content: '+';
+}
+nav.offscreen-master ul li .hasSub.open:after {
+  content: "-";
+}
 nav.offscreen-master ul li > ul li {
   padding-left: 10px;
+}
+
+.close-master {
+  background: #0071bc;
+  color: white;
+  font-size: 14px;
+  font-weight: 300;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-align: center;
 }
 
 /* Hamburger Menu Styling*/
@@ -47,6 +97,7 @@ nav.offscreen-master ul li > ul li {
   position: relative;
   width: 22px;
   height: 42px;
+  z-index: 33;
   cursor: pointer;
   margin: 20px;
 }
