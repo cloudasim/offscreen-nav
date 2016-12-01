@@ -1,7 +1,3 @@
-.show {
-  display: none;
-}
-
 nav.offscreen-master {
   position: fixed;
   top: 0;
@@ -19,9 +15,6 @@ nav.offscreen-master {
   max-width: 420px;
   overflow-y: auto;
 }
-nav.offscreen-master.openmaster {
-  left: 0;
-}
 nav.offscreen-master.open {
   left: 0;
 }
@@ -35,6 +28,9 @@ nav.offscreen-master ul li {
   position: relative;
 }
 nav.offscreen-master ul li a {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   color: #212121;
   position: relative;
   text-decoration: none;
@@ -67,7 +63,7 @@ nav.offscreen-master ul li .hasSub {
   width: 20px;
   text-align: center;
   height: 20px;
-  line-height: 20px;
+  line-height: 19px;
   display: inline-block;
   background: #fafafa;
   z-index: 55;
@@ -80,6 +76,32 @@ nav.offscreen-master ul li .hasSub.open:after {
 }
 nav.offscreen-master ul li > ul li {
   padding-left: 10px;
+}
+nav.offscreen-master ul li .hidesubmenu {
+  display: none;
+}
+nav.offscreen-master ul li .showsubmenu {
+  display: block;
+}
+
+.oc-close {
+  position: absolute;
+  top: 0;
+  right: 30px;
+  bottom: 0;
+  left: auto;
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
 }
 
 .close-master {
@@ -94,7 +116,8 @@ nav.offscreen-master ul li > ul li {
 
 /* Hamburger Menu Styling*/
 .hamburger {
-  position: relative;
+  position: absolute;
+  top: 0;
   width: 22px;
   height: 42px;
   z-index: 33;
@@ -110,6 +133,16 @@ nav.offscreen-master ul li > ul li {
 }
 .hamburger:hover span.line, .hamburger:focus span.line {
   background: #0071bc;
+}
+
+.oc-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.95);
+  overflow-y: hidden;
 }
 
 /*# sourceMappingURL=offscreenMenu.css.map */

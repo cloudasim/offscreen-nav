@@ -68,3 +68,10 @@
 @mixin skew ($x, $y) {
     @include transform(skew(#{$x}deg, #{$y}deg));
 }
+
+// overflow text
+@mixin overflowtext(){
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
