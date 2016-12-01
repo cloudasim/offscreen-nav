@@ -74,6 +74,30 @@ nav.offscreen-master ul li .hasSub.close:after {
 nav.offscreen-master ul li .hasSub.open:after {
   content: "-";
 }
+nav.offscreen-master ul li.hassubmenu {
+  position: relative;
+}
+nav.offscreen-master ul li.hassubmenu:after {
+  content: ' + ';
+  position: absolute;
+  top: 15px;
+  right: 7px;
+  bottom: 0;
+  left: auto;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  color: #2e2e2e;
+  cursor: pointer;
+  width: 20px;
+  text-align: center;
+  height: 20px;
+  line-height: 19px;
+  display: inline-block;
+  background: #fafafa;
+  z-index: 55;
+}
 nav.offscreen-master ul li > ul li {
   padding-left: 10px;
 }

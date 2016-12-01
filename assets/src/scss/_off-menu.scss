@@ -74,12 +74,26 @@ nav.offscreen-master{
 
             }
 
-            // > ul {
-            //     display: none;
-            // }
+            &.hassubmenu{
+                position: relative;
+
+                &:after{
+                    content: ' + ';
+                    @include position(absolute, 15px, 7px, 0, auto);
+                    @include border-radius(50%);
+                    color: lighten($base, 5%);
+                    cursor: pointer;
+                    width: 20px;
+                    text-align: center;
+                    height: 20px;
+                    line-height: 19px;
+                    display: inline-block;
+                    background: darken($white, 2%);
+                    z-index: 55;
+                }
+            }
 
             > ul li{
-                // display: none;
                 padding-left: 10px;
             }
 

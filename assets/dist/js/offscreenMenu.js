@@ -35,27 +35,28 @@
                 $('body').removeClass('oc-overlay');
             });
 
-            var hasdropdown = _this.children('ul').find('li');
-            if(hasdropdown.has('> ul')){
-                hasdropdown.has('> ul').prepend('<span class="hasSub close"></span>');
-                hasdropdown.children('ul').addClass('hide');
+            $('li:has(> ul)').addClass('hassubmenu');
+            
+            // if(hasdropdown.has('> ul')){
+            //     hasdropdown.has('> ul').prepend('<span class="hasSub close"></span>');
+            //     hasdropdown.children('ul').addClass('hide');
 
-                $('.hasSub').siblings('ul').addClass('hide');
-                $('.hasSub').on('click', function(e){
-                    var selected = $(this);
-                    if(selected.siblings('ul').hasClass('hide')){
-                        selected.siblings('ul').addClass('hide').removeClass('show');
-                        selected.siblings('ul').removeClass('hide').addClass('show');
-                    }
-                    else{
-                        selected.siblings('ul').addClass('hide').removeClass('show');
-                    }
-                    selected.toggleClass('open');
-                    selected.next('a').toggleClass('active');
+            //     $('.hasSub').siblings('ul').addClass('hide');
+            //     $('.hasSub').on('click', function(e){
+            //         var selected = $(this);
+            //         if(selected.siblings('ul').hasClass('hide')){
+            //             selected.siblings('ul').addClass('hide').removeClass('show');
+            //             selected.siblings('ul').removeClass('hide').addClass('show');
+            //         }
+            //         else{
+            //             selected.siblings('ul').addClass('hide').removeClass('show');
+            //         }
+            //         selected.toggleClass('open');
+            //         selected.next('a').toggleClass('active');
 
-                });
+            //     });
 
-            };
+            // };
 
         });
 
