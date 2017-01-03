@@ -5,7 +5,7 @@
     // Start of Plugin
     $.fn.offscreenMenu = function( options ) {
 
-       var defaultSettings = {
+        var defaultSettings = {
             menuWidth : 320,
             openMaster: '.oc-open',
             closeMaster: '.oc-close',
@@ -36,6 +36,8 @@
             });
 
             $('li:has(> ul)').addClass('hassubmenu');
+
+            
             
             // if(hasdropdown.has('> ul')){
             //     hasdropdown.has('> ul').prepend('<span class="hasSub close"></span>');

@@ -44,7 +44,7 @@ module.exports = function( grunt ){
             },
             main: {
                 src: ['./assets/src/js/offscreenMenu.js'],
-                dest: './assets/src/js/offscreenMenu.min.js'
+                dest: './assets/dist/js/offscreenMenu.min.js'
             }
         },
 
@@ -72,8 +72,7 @@ module.exports = function( grunt ){
             main: {
               files: [
                     { expand: true, cwd: './assets/src/img', src: '**', dest: './assets/dist/img/', filter: 'isFile'},
-                    { expand: true, cwd: './assets/src/css', src: '*.css', dest: './assets/dist/css/', filter: 'isFile'},
-                    { expand: true, cwd: './assets/src/js', src: '*.js', dest: './assets/dist/js/', filter: 'isFile'}
+                    { expand: true, cwd: './assets/src/css', src: '*.css', dest: './assets/dist/css/', filter: 'isFile'}
               ]
           }
         },
@@ -82,7 +81,7 @@ module.exports = function( grunt ){
         watch: {
             js : {
                 files : ['./assets/src/js/*.js', './assets/src/js/**/*.js'],
-                tasks : [ 'default' ]
+                tasks : [ 'js' ]
             },
             css : {
                 files : [
@@ -91,9 +90,9 @@ module.exports = function( grunt ){
                     './assets/src/scss/**/**/*.scss',
                     './assets/src/scss/**/*.scss'
                     ],
-                tasks : [ 'default']
+                tasks : [ 'css']
             }
-        } 
+        }
 
     });
 
@@ -105,5 +104,7 @@ module.exports = function( grunt ){
     grunt.loadNpmTasks('grunt-contrib-sass');
   
     // Grunt Tasks
+    grunt.registerTask( 'css', [ 'sass', 'concat', 'cssmin', 'copy'] );
+    grunt.registerTask( 'js', [ 'concat', 'uglify', 'copy' ] );
     grunt.registerTask('default', [ 'sass', 'concat', 'copy', 'uglify','cssmin'] );
 }

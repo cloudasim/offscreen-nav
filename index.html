@@ -37,9 +37,9 @@
         <nav class="offscreen-master">
             <ul>
                 <li><a href="">Home</a></li>
-                <li>
+                <li class="hassubmenu">
                     <a href="">About Us</a>
-                    <ul>
+                    <ul class="is-submenu">
                         <li><a href="">Who We Are?</a></li>
                         <li><a href="">What We Do?</a></li>
                         <li><a href="">Where are we?</a></li>
@@ -48,15 +48,15 @@
                     </ul>
                 </li>
                 <li><a href="">Menu Single</a></li>
-                <li>
+                <li class="hassubmenu">
                     <a href="">MultiLevel Menu</a>
-                    <ul>
-                        <li>
+                    <ul class="is-submenu">
+                        <li class="hassubmenu">
                             <a href="">Level One first</a>
-                            <ul>
-                                <li>
+                            <ul class="is-submenu">
+                                <li class="hassubmenu">
                                     <a href="">Level Two First</a>
-                                    <ul>
+                                    <ul class="is-submenu">
                                         <li><a href="">Level Three First</a></li>
                                         <li><a href="">Level Three Second</a></li>
                                         <li><a href="">Level Three Third</a></li>
@@ -77,42 +77,16 @@
             </ul>
         </nav>
 
-        <div class="oc-open">
-            Menu
-        </div>
-
-        <div class="oc-close">CLOSE</div>
-
         <div class="container">
+            <div class="oc-open">&#9776;</div>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut pariatur quo assumenda optio animi iste esse minus ipsam molestiae vitae ex inventore, enim eaque cumque, quaerat accusamus voluptates earum consequatur.</p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam neque, natus nesciunt quo expedita. Dolores minus pariatur officiis ut modi ratione ipsa, odio earum cum animi vitae. Dolorum deleniti, quis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo quas aliquid ipsa porro facilis assumenda rerum corrupti repellendus dolorem? Ullam mollitia, dolorum. Sapiente veritatis minima, quibusdam quos. Obcaecati quibusdam, vitae.
         </div>
 
     </body>
     <script src="assets/dist/js/jquery.js" type="text/javascript"></script>
-    <script src="assets/dist/js/offscreenMenu.js" type="text/javascript"></script>
+    <script src="assets/dist/js/offscreenMenu.min.js" type="text/javascript"></script>
     <script type="text/javascript">
-        // function callMe(){
-
-        //     this.init = function () {
-        //         var _this = this;
-                
-        //         jQuery(window).load(function () {
-        //             _this.offscreen();
-        //         });
-
-        //     }
-
-        //     this.offscreen = function(){
-        //         $callthis = jQuery('.offscreen-master');
-        //         $callthis.offscreenMenu({
-        //             width: 320
-        //         });
-        //     }
-
-        // }
-        // new callMe().init();
-
         jQuery(document).ready(function(){
             $('.offscreen-master').offscreenMenu();
         });

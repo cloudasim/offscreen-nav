@@ -4,10 +4,6 @@ nav.offscreen-master {
   right: 0;
   bottom: 0;
   left: -420px;
-  -webkit-transition: all linear 0.35s;
-  -moz-transition: all linear 0.35s;
-  -o-transition: all linear 0.35s;
-  transition: all linear 0.35s;
   z-index: 44;
   background: #fff;
   width: 100%;
@@ -48,36 +44,10 @@ nav.offscreen-master ul li a:active, nav.offscreen-master ul li a.active {
   text-decoration: none;
   outline: none;
 }
-nav.offscreen-master ul li .hasSub {
-  position: absolute;
-  top: 15px;
-  right: 7px;
-  bottom: 0;
-  left: auto;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  border-radius: 50%;
-  color: #2e2e2e;
-  cursor: pointer;
-  width: 20px;
-  text-align: center;
-  height: 20px;
-  line-height: 19px;
-  display: inline-block;
-  background: #fafafa;
-  z-index: 55;
-}
-nav.offscreen-master ul li .hasSub.close:after {
-  content: '+';
-}
-nav.offscreen-master ul li .hasSub.open:after {
-  content: "-";
-}
 nav.offscreen-master ul li.hassubmenu {
   position: relative;
 }
-nav.offscreen-master ul li.hassubmenu:after {
+nav.offscreen-master ul li.hassubmenu:before {
   content: ' + ';
   position: absolute;
   top: 15px;
@@ -96,7 +66,9 @@ nav.offscreen-master ul li.hassubmenu:after {
   line-height: 19px;
   display: inline-block;
   background: #fafafa;
-  z-index: 55;
+}
+nav.offscreen-master ul li.hassubmenu.active:before {
+  content: '-';
 }
 nav.offscreen-master ul li > ul li {
   padding-left: 10px;
@@ -114,10 +86,18 @@ nav.offscreen-master ul li .showsubmenu {
   right: 30px;
   bottom: 0;
   left: auto;
+  cursor: pointer;
   width: 30px;
   height: 30px;
   background: #fff;
+  text-align: center;
+  line-height: 30px;
   display: none;
+  z-index: 55;
+}
+
+.oc-open {
+  cursor: pointer;
 }
 
 .show {
@@ -167,6 +147,7 @@ nav.offscreen-master ul li .showsubmenu {
   left: 0;
   background: rgba(0, 0, 0, 0.95);
   overflow-y: hidden;
+  z-index: 33;
 }
 
 /*# sourceMappingURL=offscreenMenu.css.map */

@@ -1,6 +1,6 @@
 nav.offscreen-master{
     @include position(fixed, 0, 0, 0, -420px);
-    @include transition(all linear 0.35s );
+    // @include transition(all linear 0.35s );
     z-index: 44;
     background: $white;
     width: 100%;
@@ -47,37 +47,10 @@ nav.offscreen-master{
 
             }
 
-            .hasSub{
-                @include position(absolute, 15px, 7px, 0, auto);
-                @include border-radius(50%);
-                color: lighten($base, 5%);
-                cursor: pointer;
-                width: 20px;
-                text-align: center;
-                height: 20px;
-                line-height: 19px;
-                display: inline-block;
-                background: darken($white, 2%);
-                z-index: 55;
-
-                &.close{
-                    &:after{
-                        content: '+';
-                    }
-                }
-
-                &.open{
-                    &:after{
-                        content: "-";
-                    }
-                }
-
-            }
-
             &.hassubmenu{
                 position: relative;
 
-                &:after{
+                &:before{
                     content: ' + ';
                     @include position(absolute, 15px, 7px, 0, auto);
                     @include border-radius(50%);
@@ -89,7 +62,12 @@ nav.offscreen-master{
                     line-height: 19px;
                     display: inline-block;
                     background: darken($white, 2%);
-                    z-index: 55;
+                    // z-index: 55;
+                }
+                &.active{
+                    &:before{
+                        content: '-';
+                    }
                 }
             }
 
@@ -109,14 +87,18 @@ nav.offscreen-master{
 
     }
 
-
 }
+
 .oc-close{
     @include position(absolute, 0, 30px, 0, auto);
+    cursor: pointer;
     width: 30px;
     height: 30px;
     background: $white;
+    text-align: center;
+    line-height: 30px;
     display: none;
+    z-index: 55;
 }
 
 @if $appear-from == 'right'{
@@ -149,7 +131,9 @@ nav.offscreen-master{
     }
 
 }
-
+.oc-open{
+    cursor: pointer;
+}
 .show{
     display: block;
 }
@@ -205,4 +189,5 @@ nav.offscreen-master{
     @include position(absolute, 0, 0, 0, 0);
     background: rgba($black, 0.95);
     overflow-y: hidden;
+    z-index: 33;
 }
